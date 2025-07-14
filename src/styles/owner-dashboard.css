@@ -1,0 +1,71 @@
+.owner-dashboard {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.add-hotel-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.add-hotel-form input,
+.add-hotel-form textarea {
+  padding: 8px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.add-hotel-form button {
+  width: fit-content;
+  padding: 10px 16px;
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.hotel-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.hotel-card {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fefefe;
+}
+
+.hotel-card .btn {
+  margin-right: 10px;
+  padding: 8px 12px;
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.hotel-card .btn.danger {
+  background-color: crimson;
+}
+.edit-hotel-form {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 6px;
+}
+.edit-hotel-form input,
+.edit-hotel-form textarea {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 8px;
+}

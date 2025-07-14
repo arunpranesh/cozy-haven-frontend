@@ -1,9 +1,25 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Node
+node_modules/
+.env
+dist/
+build/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
 
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
+
 
 # testing
 /coverage

@@ -1,0 +1,135 @@
+.manage-rooms-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+.inline-checkbox {
+  display:flex ;
+  align-items: center;
+  gap: 8px;
+}
+.inline-checkbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+
+
+.add-room-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.add-room-form input,
+.add-room-form select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+
+.add-room-form button {
+  width: fit-content;
+  padding: 10px 16px;
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.room-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.room-card {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fdfdfd;
+}
+
+.room-card button {
+  width: fit-content;
+  padding: 10px 16px;
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.edit-room-form {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.edit-room-form input,
+.edit-room-form select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  width: 100%;
+}
+
+.edit-room-form label {
+  font-weight: 500;
+  color: #444;
+}
+
+.edit-room-form .image-upload-section {
+  margin-top: 10px;
+}
+
+.edit-room-form button {
+  width: fit-content;
+  padding: 10px 16px;
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.image-upload-section {
+  margin: 10px 0;
+}
+
+.upload-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.file-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.preview-container {
+  margin-top: 10px;
+}
+
+.image-preview {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
