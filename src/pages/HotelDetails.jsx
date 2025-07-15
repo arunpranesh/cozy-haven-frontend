@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import api from '../services/api';
-import {jwtDecode} from 'jwt-decode';
+import { useAuth } from '../context/AuthContext';
 import '../styles/hotel-details.css';
+import '../styles/base.css';
 
 const HotelDetails = () => {
   const { id } = useParams();
@@ -11,33 +12,26 @@ const HotelDetails = () => {
   const [rooms, setRooms] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [newReview, setNewReview] = useState({ rating: 5, comment: '' });
-
-  const token = localStorage.getItem('token');
-  let userId = null;
-  if (token) {
-    try {
-      const decoded = jwtDecode(token);
-      userId = decoded.nameid; // adjust this if backend uses a different claim
-    } catch {}
-  }
+  const { user } = useAuth();
+  const token = localStorage.getItem('token'); // fallback if needed
+  const userId = user?.id || null;
 
   useEffect(() => {
     fetchHotel();
     fetchRooms();
     fetchReviews();
     checkBookingEligibility();
-
   }, [id]);
 
   const fetchHotel = async () => {
-    const res = await api.get(`/api/Hotel/${id}`);
+    const res = await api.get(`/api/Hotel/${id}`, { headers: { Authorization: `Bearer ${token}` } });
     setHotel(res.data);
   };
   const [hasBooked, setHasBooked] = useState(false);
 
 const checkBookingEligibility = async () => {
   try {
-    const res = await api.get('/api/Booking/my-bookings');
+    const res = await api.get('/api/Booking/my-bookings', { headers: { Authorization: `Bearer ${token}` } });
     const myBookings = res.data;
     const eligible = myBookings.some(b => b.status === 'Active' && b.hotelId === parseInt(id));
     setHasBooked(eligible);
@@ -47,13 +41,13 @@ const checkBookingEligibility = async () => {
 };
 
   const fetchRooms = async () => {
-    const res = await api.get(`/api/Room/by/${id}`);
+    const res = await api.get(`/api/Room/by/${id}`, { headers: { Authorization: `Bearer ${token}` } });
     console.log("Fetched rooms:", res.data);
     setRooms(res.data);
   };
 
   const fetchReviews = async () => {
-    const res = await api.get(`/api/Review/${id}`);
+    const res = await api.get(`/api/Review/${id}`, { headers: { Authorization: `Bearer ${token}` } });
     setReviews(res.data);
   };
 
@@ -66,7 +60,7 @@ const checkBookingEligibility = async () => {
         hotelId: parseInt(id),
         rating: parseInt(newReview.rating),
         comment: newReview.comment
-      });
+      }, { headers: { Authorization: `Bearer ${token}` } });
       setNewReview({ rating: 5, comment: '' });
       fetchReviews();
     } catch (err) {
@@ -77,7 +71,7 @@ const checkBookingEligibility = async () => {
   const handleDeleteReview = async (reviewId) => {
     if (!window.confirm('Delete your review?')) return;
     try {
-      await api.delete(`/api/Review/${reviewId}`);
+      await api.delete(`/api/Review/${reviewId}`, { headers: { Authorization: `Bearer ${token}` } });
       fetchReviews();
     } catch {
       alert('Failed to delete review');

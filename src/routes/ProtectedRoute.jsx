@@ -1,28 +1,19 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import {jwtDecode} from 'jwt-decode';
+import { useAuth } from '../context/AuthContext';
 
 const ProtectedRoute = ({ element, role }) => {
-  const token = localStorage.getItem('token');
+  const { isAuthenticated, role: userRole } = useAuth();
 
-  if (!token) {
+  if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
   }
 
-  try {
-    const decoded = jwtDecode(token);
-    const userRole =
-      decoded["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] ||
-      decoded.role;
-
-    if (role && userRole !== role) {
-      return <Navigate to="/" replace />;
-    }
-
-    return element;
-  } catch {
-    return <Navigate to="/login" replace />;
+  if (role && userRole !== role) {
+    return <Navigate to="/" replace />;
   }
+
+  return element;
 };
 
 export default ProtectedRoute;

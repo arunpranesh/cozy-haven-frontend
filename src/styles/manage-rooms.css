@@ -1,125 +1,165 @@
+/* manage-rooms.css - Agoda-like clean style */
+
 .manage-rooms-container {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-}
-.inline-checkbox {
-  display:flex ;
-  align-items: center;
-  gap: 8px;
-}
-.inline-checkbox input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 32px 24px;
+  font-family: var(--font-main);
+  background: var(--surface);
 }
 
+.manage-rooms-container h2 {
+  text-align: left;
+  margin-bottom: 28px;
+  color: var(--text-main);
+  font-size: 2rem;
+  font-weight: 700;
+}
 
+.add-room-form,
+.edit-room-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 18px;
+  background: var(--primary-bg);
+  padding: 28px 22px;
+  border-radius: var(--border-radius);
+  margin-bottom: 32px;
+  box-shadow: var(--box-shadow);
+  align-items: start;
+}
 
-.add-room-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 30px;
+.edit-room-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--primary-bg);
+  padding: 32px 28px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.13);
+  z-index: 999;
+  max-width: 420px;
+  width: 100%;
+  min-width: 320px;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .edit-room-form {
+    max-width: 95vw;
+    min-width: 0;
+    padding: 18px 8px;
+  }
+}
+
+@media (max-width: 800px) {
+  .add-room-form,
+  .edit-room-form {
+    grid-template-columns: 1fr;
+    padding: 18px 8px;
+    gap: 16px;
+  }
+  .image-upload-section {
+    grid-column: span 1 !important;
+  }
+}
+
+.add-room-form > *,
+.edit-room-form > * {
+  min-width: 0;
 }
 
 .add-room-form input,
-.add-room-form select {
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #aaa;
-}
-
-.add-room-form button {
-  width: fit-content;
-  padding: 10px 16px;
-  background-color: teal;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.room-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.room-card {
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background: #fdfdfd;
-}
-
-.room-card button {
-  width: fit-content;
-  padding: 10px 16px;
-  background-color: teal;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-.edit-room-form {
-  background: #fff;
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
 .edit-room-form input,
+.add-room-form select,
 .edit-room-form select {
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #aaa;
+  padding: 11px;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  font-size: 15px;
   width: 100%;
+  background: #fafafa;
+  color: var(--text-main);
+  transition: border 0.2s, box-shadow 0.2s;
 }
 
-.edit-room-form label {
+button {
+  padding: 11px 16px;
+  background: var(--brown);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
   font-weight: 500;
-  color: #444;
+  font-size: 15px;
+  transition: background 0.2s;
 }
 
-.edit-room-form .image-upload-section {
-  margin-top: 10px;
+button:hover {
+  background: var(--brown-dark);
 }
 
 .edit-room-form button {
-  width: fit-content;
-  padding: 10px 16px;
-  background-color: teal;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  grid-column: span 1;
+}
+
+.edit-room-form .inline-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.inline-checkbox, .add-room-form .ac-checkbox-label, .edit-room-form .inline-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  grid-column: span 2;
+  white-space: nowrap;
+}
+
+.add-room-form input[type="checkbox"],
+.edit-room-form input[type="checkbox"] {
+  margin: 0 6px 0 0;
+  width: 18px;
+  height: 18px;
+}
+
+.add-room-form label[for="ac"],
+.edit-room-form label[for="edit-ac"] {
+  margin: 0;
+  font-weight: 500;
+  color: var(--text-main);
+  display: inline;
+}
+
+.add-room-form button,
+.edit-room-form button {
+  grid-column: span 2;
   margin-top: 10px;
 }
+
 .image-upload-section {
-  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  grid-column: span 2;
+  margin-bottom: 0;
 }
 
 .upload-label {
-  display: block;
+  margin-bottom: 6px;
   font-weight: 600;
-  margin-bottom: 5px;
-  color: #333;
+  color: var(--text-main);
 }
 
 .file-input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  width: 100%;
-  max-width: 300px;
-  margin-bottom: 10px;
-  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  padding: 7px;
+  background: #fafafa;
+  color: var(--text-main);
 }
 
 .preview-container {
@@ -127,9 +167,59 @@
 }
 
 .image-preview {
-  width: 150px;
-  height: auto;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  max-height: 150px;
+  border-radius: var(--border-radius);
+  object-fit: cover;
+  border: 1px solid #eee;
+}
+
+.room-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.room-card {
+  padding: 18px 14px 14px 14px;
+  background: var(--primary-bg);
+  border: 1px solid #eee;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.room-card p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+
+.room-card strong {
+  color: var(--text-main);
+}
+
+.room-card button {
+  margin-top: 8px;
+  background: var(--error);
+}
+
+.room-card button:hover {
+  background: #b71c1c;
+}
+
+hr {
+  margin: 30px 0;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(220, 220, 220, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 998;
 }

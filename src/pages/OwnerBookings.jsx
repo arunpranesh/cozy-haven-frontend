@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import api from '../services/api';
 import '../styles/owner-bookings.css';
+import '../styles/base.css';
+import { useAuth } from '../context/AuthContext';
 
 const OwnerBookings = () => {
   const [bookings, setBookings] = useState([]);
+  const { user } = useAuth();
+  const token = localStorage.getItem('token'); // fallback if needed
 
   useEffect(() => {
     fetchOwnerBookings();
@@ -11,7 +15,7 @@ const OwnerBookings = () => {
 
   const fetchOwnerBookings = async () => {
     try {
-      const res = await api.get('/api/Booking/owner');
+      const res = await api.get('/api/Booking/owner', { headers: { Authorization: `Bearer ${token}` } });
       setBookings(res.data);
     } catch (err) {
       console.error('Error fetching owner bookings:', err);
@@ -22,7 +26,7 @@ const OwnerBookings = () => {
   const approveRefund = async (id) => {
     if (!window.confirm('Approve refund for this booking?')) return;
     try {
-      await api.post(`/api/Booking/refund/${id}`);
+      await api.post(`/api/Booking/refund/${id}`, { headers: { Authorization: `Bearer ${token}` } });
       alert('Refund approved.');
       fetchOwnerBookings();
     } catch (err) {
