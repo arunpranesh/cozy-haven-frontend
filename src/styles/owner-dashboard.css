@@ -1,59 +1,93 @@
 .owner-dashboard {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 32px 20px;
+  background: var(--surface);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 12px rgba(176,138,96,0.04);
 }
 
 .add-hotel-form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
   margin-bottom: 30px;
 }
 
 .add-hotel-form input,
 .add-hotel-form textarea {
-  padding: 8px;
-  border: 1px solid #aaa;
-  border-radius: 5px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  background: #fafafa;
+  color: var(--text-main);
+  transition: border-color 0.18s;
+}
+
+.add-hotel-form input:focus,
+.add-hotel-form textarea:focus {
+  border-color: var(--accent);
+  outline: none;
 }
 
 .add-hotel-form button {
   width: fit-content;
-  padding: 10px 16px;
-  background-color: teal;
-  color: white;
+  padding: 12px 20px;
+  background-color: var(--accent);
+  color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
+  transition: background 0.18s;
+}
+
+.add-hotel-form button:hover {
+  background-color: var(--brown-dark);
 }
 
 .hotel-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
 }
 
 .hotel-card {
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background: #fefefe;
+  background: var(--primary-bg);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(176,138,96,0.07);
+  padding: 24px 20px 16px 20px;
+  border: none;
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: box-shadow 0.18s, transform 0.18s;
+}
+
+.hotel-card:hover {
+  box-shadow: 0 6px 24px rgba(176,138,96,0.13);
+  transform: translateY(-2px);
 }
 
 .hotel-card .btn {
   margin-right: 10px;
-  padding: 8px 12px;
-  background-color: teal;
+  padding: 10px 16px;
+  background-color: var(--accent);
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.18s;
 }
 
 .hotel-card .btn.danger {
-  background-color: crimson;
+  background-color: #e74c3c;
 }
 .edit-hotel-form {
   background: #f9f9f9;

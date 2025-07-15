@@ -1,0 +1,110 @@
+.about-container {
+  max-width: 800px;
+  margin: 48px auto 32px auto;
+  background: var(--primary-bg, #fff);
+  border-radius: var(--border-radius, 14px);
+  box-shadow: var(--box-shadow, 0 2px 16px rgba(0,0,0,0.06));
+  padding: 40px 32px 32px 32px;
+  font-family: var(--font-main, 'Segoe UI', Arial, sans-serif);
+  color: var(--text-main, #222);
+}
+.about-container h2 {
+  font-size: 2.2rem;
+  color: var(--accent, #8d5524);
+  margin-bottom: 18px;
+  font-weight: 700;
+  text-align: left;
+}
+.about-lead {
+  font-size: 1.18rem;
+  color: var(--text-secondary, #555);
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+.about-brand {
+  color: var(--accent, #8d5524);
+  font-weight: 700;
+  font-size: 1.15em;
+}
+.about-section {
+  margin-bottom: 28px;
+}
+.about-section h3 {
+  color: var(--accent, #8d5524);
+  font-size: 1.18rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.about-section p {
+  font-size: 1.05rem;
+  color: var(--text-secondary, #444);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+.about-features-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  justify-content: flex-start;
+}
+.about-feature-card {
+  background: #faf8f4;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  padding: 18px 18px 12px 18px;
+  min-width: 160px;
+  max-width: 200px;
+  flex: 1 1 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.about-feature-icon {
+  font-size: 2.1rem;
+  color: var(--accent, #8d5524);
+  margin-bottom: 8px;
+}
+.about-feature-title {
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--accent, #8d5524);
+}
+.about-feature-desc {
+  font-size: 0.98rem;
+  color: var(--text-secondary, #555);
+}
+.about-footer {
+  margin-top: 32px;
+  font-size: 1.08rem;
+  color: var(--accent, #8d5524);
+  text-align: center;
+  font-weight: 600;
+}
+@media (max-width: 700px) {
+  .about-container {
+    padding: 18px 6vw 18px 6vw;
+  }
+  .about-container h2 {
+    font-size: 1.3rem;
+  }
+  .about-lead {
+    font-size: 1rem;
+  }
+  .about-section h3 {
+    font-size: 1.05rem;
+  }
+  .about-features-row {
+    gap: 12px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .about-feature-card {
+    min-width: unset;
+    max-width: unset;
+    padding: 14px 8px 10px 8px;
+  }
+} 

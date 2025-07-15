@@ -2,34 +2,118 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 20px;
-  background-color: #004d4d;
-  color: white;
+  padding: 18px 32px;
+  background-color: var(--primary-bg, #fffaf6);
+  color: var(--accent, #b08a60);
+  box-shadow: 0 2px 12px rgba(176,138,96,0.06);
+  border-radius: 0 0 18px 18px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.logo {
-  font-size: 20px;
-  font-weight: bold;
-  text-decoration: none;
-  color: white;
+.navbar-brand h1 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--accent, #b08a60);
+  margin: 0;
+  letter-spacing: 1px;
 }
 
 .nav-links {
   display: flex;
-  gap: 15px;
+  gap: 22px;
+  align-items: center;
 }
 
 .nav-links a,
 .nav-links button {
-  color: white;
+  color: var(--accent, #b08a60);
   text-decoration: none;
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1.08rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.18s, color 0.18s;
 }
 
 .nav-links a:hover,
 .nav-links button:hover {
-  text-decoration: underline;
+  color: var(--brown-dark, #a08a6a);
+  background: #f3ede5;
+  text-decoration: none;
+}
+
+.profile-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.profile-icon {
+  background: var(--brown, #d1bfa3);
+  color: #fff;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  margin-right: 10px;
+  box-shadow: 0 2px 8px rgba(176,138,96,0.10);
+}
+
+.profile-label {
+  font-weight: 500;
+  color: var(--text-main, #3a2e1f);
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 44px;
+  right: 0;
+  background: var(--primary-bg, #fffaf6);
+  box-shadow: 0 2px 12px rgba(176,138,96,0.12);
+  border-radius: 12px;
+  min-width: 180px;
+  z-index: 1001;
+  padding: 8px 0;
+  border: 1px solid #eee;
+}
+
+.dropdown-item {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 12px 24px;
+  font-size: 1.08rem;
+  color: var(--text-main, #3a2e1f);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.16s;
+}
+.dropdown-item:hover {
+  background: #f3ede5;
+  color: var(--accent, #b08a60);
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 8vw;
+    border-radius: 0 0 12px 12px;
+  }
+  .nav-links {
+    gap: 12px;
+  }
 }

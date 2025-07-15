@@ -3,15 +3,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--surface);
+  background: linear-gradient(120deg, #f8e7d2 0%, #f3f0ea 100%);
   font-family: var(--font-main);
 }
 
 .auth-box {
-  background: var(--primary-bg);
+  background: rgba(255,255,255,0.99);
   padding: 40px 32px 32px 32px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.09);
   width: 100%;
   max-width: 420px;
   text-align: center;
@@ -250,8 +250,9 @@ form button:hover {
 }
 /* --- End Enhanced Login Layout --- */
 
-/* --- Centered Login Layout with Soft Background --- */
+/* --- Centered Login Layout with Logo Background and Three Containers --- */
 .login-bg-centered {
+  margin-top: 100px;
   min-height: 100vh;
   width: 100vw;
   display: flex;
@@ -277,7 +278,30 @@ form button:hover {
   position: relative;
   z-index: 2;
 }
-/* Remove background image/overlay from .login-form-container */
+.login-outer-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 420px;
+  margin: 111px auto 0 auto;
+  gap: 28px;
+}
+@media (max-width: 700px) {
+  .login-outer-stack {
+    margin-top: 24px;
+  }
+}
+.login-tagline-centered {
+  font-size: 2.5rem;
+  color: var(--accent, #8d5524);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
 .login-form-container {
   background: rgba(255,255,255,0.99);
   border-radius: 18px;
@@ -290,28 +314,6 @@ form button:hover {
   min-height: 340px;
 }
 .login-form-container::before { display: none; }
-.login-card-centered {
-  background: rgba(255,255,255,0.97);
-  border-radius: 22px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
-  padding: 40px 36px 32px 36px;
-  max-width: 480px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-}
-
-.login-tagline-centered {
-  font-size: 2.5rem;
-  color: var(--accent, #8d5524);
-  font-weight: 600;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: center;
-}
 .auth-box-centered {
   position: relative;
   z-index: 3;
@@ -319,12 +321,6 @@ form button:hover {
   box-shadow: none;
   padding: 0;
   text-align: center;
-}
-.auth-box-centered h2 {
-  margin-bottom: 10px;
-  color: var(--text-main);
-  font-size: 1.7rem;
-  font-weight: 700;
 }
 .sub-text-centered {
   margin-bottom: 18px;
@@ -379,6 +375,17 @@ form button:hover {
   color: var(--brown-dark);
   text-decoration: underline;
 }
+.login-features-container {
+  border-radius: 18px;
+  padding: 18px 12px 12px 12px;
+  width: 230%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-left: -6%;
+}
 .feature-highlights-row-centered {
   display: flex;
   flex-direction: row;
@@ -397,21 +404,23 @@ form button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #faf8f4;
   border-radius: 10px;
-  padding: 8px 24px 5px 12px;
+  padding: 8px 10px 4px 10px;
   min-width: 70px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
 }
 .feature-icon-centered {
-  color: var(--accent, #8d5524);
-  font-size: 2.4rem;
+  font-size: 2.3rem;
   margin-bottom: 2px;
 }
 .feature-title-centered {
-  font-size: 0.93rem;
+  font-size: 1.23rem;
   color: var(--text-main);
   font-weight: 500;
 }
 .testimonial-box-centered {
+  background: #f7f3ed;
   border-radius: 10px;
   padding: 10px 12px;
   margin: 14px 0 0 0;
@@ -419,93 +428,10 @@ form button:hover {
   color: var(--accent, #8d5524);
   font-style: italic;
   text-align: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
 }
 .testimonial-quote-centered {
   font-size: 0.99rem;
-}
-@media (max-width: 600px) {
-  .login-card-centered {
-    padding: 18px 2vw 12px 2vw;
-    max-width: 98vw;
-  }
-  .feature-highlights-row-centered {
-    gap: 10px;
-    justify-content: flex-start;
-  }
-}
-/* --- End Centered Login Layout --- */
-
-/* --- Three Container Centered Login Layout --- */
-.login-outer-stack {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 420px;
-  margin: 0 auto;
-  gap: 28px;
-}
-.login-logo-container {
-  border-radius: 18px;
-  padding: 24px 18px 12px 18px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 0;
-  margin-top: -100px;
-  
-}
-.login-form-container {
-  background: rgba(255,255,255,0.99);
-  border-radius: 18px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.09);
-  padding: 32px 22px 24px 22px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  background-repeat: no-repeat;
-  background-position: center 32px;
-  background-size: 90px 90px;
-  /* The backgroundImage is set inline in JSX */
-  min-height: 340px;
-  z-index: 1;
-}
-.login-form-container::before {
-  content: '';
-  position: absolute;
-  top: 32px;
-  left: 0;
-  right: 0;
-  height: 90px;
-  background: inherit;
-  opacity: 0.13;
-  z-index: 2;
-  pointer-events: none;
-}
-.auth-box-centered {
-  position: relative;
-  z-index: 3;
-  background: none;
-  box-shadow: none;
-  padding: 0;
-  text-align: center;
-}
-.login-features-container {
-  background: rgba(255,255,255,0.96);
-  border-radius: 18px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  padding: 18px 12px 12px 12px;
-  width: 230%;
-  max-width: 1100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin-left: -6%;
 }
 @media (max-width: 900px) {
   .login-features-container {
@@ -524,11 +450,9 @@ form button:hover {
     padding-left: 4vw;
     padding-right: 4vw;
   }
-  .login-features-container {
-    width: 100vw;
-    max-width: 98vw;
-    margin-left: 0;
-    border-radius: 12px;
+  .feature-highlights-row-centered {
+    gap: 10px;
+    justify-content: flex-start;
   }
 }
-/* --- End Three Container Centered Login Layout --- */
+/* --- End Centered Login Layout --- */

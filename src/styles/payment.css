@@ -1,0 +1,124 @@
+.payment-container {
+  max-width: 520px;
+  margin: 48px auto 32px auto;
+  background: var(--primary-bg, #fff);
+  border-radius: var(--border-radius, 14px);
+  box-shadow: 0 6px 32px rgba(176,138,96,0.10);
+  padding: 48px 36px 36px 36px;
+  font-family: var(--font-main, 'Segoe UI', Arial, sans-serif);
+  color: var(--text-main, #222);
+}
+.payment-container h2 {
+  font-size: 2rem;
+  color: var(--accent, #8d5524);
+  margin-bottom: 18px;
+  font-weight: 700;
+  text-align: left;
+}
+.booking-summary {
+  background: #faf8f4;
+  border-radius: 12px;
+  padding: 22px 22px 14px 22px;
+  margin: 28px 0 0 0;
+  box-shadow: 0 2px 8px rgba(176,138,96,0.04);
+}
+.booking-summary p {
+  font-size: 1.08rem;
+  color: var(--text-secondary, #444);
+  margin: 10px 0;
+}
+.payment-methods {
+  margin: 28px 0 0 0;
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+.payment-methods label {
+  font-size: 1.13rem;
+  color: var(--accent, #8d5524);
+  font-weight: 500;
+  margin-right: 14px;
+}
+.payment-actions {
+  margin-top: 32px;
+  display: flex;
+  gap: 18px;
+  justify-content: flex-end;
+}
+.payment-actions button {
+  min-width: 140px;
+  padding: 12px 0;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(176,138,96,0.06);
+  transition: background 0.16s, transform 0.16s;
+  cursor: pointer;
+}
+.payment-actions button:hover {
+  background: var(--brown-dark);
+  transform: translateY(-1px);
+}
+.fake-card-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #faf8f4;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(176,138,96,0.06);
+  padding: 28px 22px 18px 22px;
+  margin-top: 28px;
+  margin-bottom: 18px;
+  min-height: 180px;
+}
+.fake-card-form label {
+  font-size: 1.08rem;
+  color: var(--accent, #8d5524);
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+.fake-card-form input {
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius, 14px);
+  font-size: 1rem;
+  background: #fff;
+  color: var(--text-main);
+  transition: border-color 0.18s;
+  margin-bottom: 0;
+}
+.fake-card-form input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+.fake-card-form button {
+  margin-top: 10px;
+  padding: 12px;
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius, 14px);
+  font-size: 1.08rem;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(176,138,96,0.06);
+  transition: background 0.16s, transform 0.16s;
+  cursor: pointer;
+}
+.fake-card-form button:hover {
+  background: var(--brown-dark);
+  transform: translateY(-1px);
+}
+@media (max-width: 700px) {
+  .payment-container {
+    padding: 18px 6vw 18px 6vw;
+  }
+  .payment-container h2 {
+    font-size: 1.3rem;
+  }
+  .booking-summary p {
+    font-size: 1rem;
+  }
+} 

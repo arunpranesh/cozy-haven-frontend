@@ -4,20 +4,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import '../styles/Auth.css';
 import '../styles/base.css';
-import logo from '../assets/logo.png';
-import bangaloreImg from '../assets/locations/banglore.jpg';
-import ootyImg from '../assets/locations/Ooty.webp';
-import chennaiImg from '../assets/locations/Chennai.jpg';
-import coimbatoreImg from '../assets/locations/coimbatore.jpeg';
-import pondyImg from '../assets/locations/pondy.jpg';
-import hyderabadImg from '../assets/locations/hyderabad.webp';
-import kochiImg from '../assets/locations/kochi.jpg';
-import mysoreImg from '../assets/locations/mysore.jpg';
-import munnarImg from '../assets/locations/munnar.webp';
-import maduraiImg from '../assets/locations/madurai.jpeg';
-import kodaiImg from '../assets/locations/kodai.jpg';
-import trivandrumImg from '../assets/locations/trivandrum.jpeg';
-import { FaHotel, FaBolt, FaTags, FaMapMarkedAlt, FaLock } from 'react-icons/fa';
 import { MdHotelClass, MdExplore } from 'react-icons/md';
 import { RiFlashlightLine, RiPriceTag3Line, RiShieldCheckLine } from 'react-icons/ri';
 
@@ -95,10 +81,8 @@ const Login = () => {
     { icon: <MdExplore />, title: 'Local Experiences' },
     { icon: <RiShieldCheckLine />, title: 'Secure & Reliable' },
   ];
-  
 
   return (
-    <div className="login-bg-centered" style={{ backgroundImage: `url(${logo})` }}>
       <div className="login-outer-stack">
         <div className="login-tagline-centered">Find your perfect stay across South India!</div>
         <div className="login-form-container">
@@ -156,7 +140,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

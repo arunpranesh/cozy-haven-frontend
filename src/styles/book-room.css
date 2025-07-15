@@ -1,34 +1,43 @@
 .book-room-container {
-  max-width: 600px;
-  margin: 30px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background: #fefefe;
+  max-width: 520px;
+  margin: 48px auto 32px auto;
+  background: var(--primary-bg, #fffaf6);
+  border-radius: var(--border-radius, 14px);
+  box-shadow: 0 2px 16px rgba(176,138,96,0.06);
+  padding: 40px 32px 32px 32px;
+  font-family: var(--font-main, 'Segoe UI', Arial, sans-serif);
+  color: var(--text-main, #222);
 }
-
 .booking-form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 16px;
 }
-
 .booking-form input {
-  padding: 8px;
-  border: 1px solid #aaa;
-  border-radius: 5px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  background: #fafafa;
+  color: var(--text-main);
+  transition: border-color 0.18s;
 }
-
+.booking-form input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
 .booking-form button {
   margin-top: 10px;
-  padding: 10px;
-  background-color: teal;
-  color: white;
+  padding: 12px;
+  background-color: var(--accent);
+  color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
+  transition: background 0.18s;
 }
-
 .booking-form button:hover {
-  background-color: darkcyan;
+  background-color: var(--brown-dark);
 }
